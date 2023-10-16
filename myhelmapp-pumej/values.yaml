@@ -2,7 +2,7 @@ appName: mexyapp
 
 namespace: default
 
-replicas: 10
+replicas: 2
 
 configmap:
   name: mexy-configv1
