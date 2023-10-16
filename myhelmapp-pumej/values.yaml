@@ -1,11 +1,11 @@
-appName: myhelmapp
+appName: mexyapp
 
 namespace: default
 
 replicas: 1
 
 configmap:
-  name: nginx-configv1
+  name: mexy-configv1
 
 image:
   name: nginx

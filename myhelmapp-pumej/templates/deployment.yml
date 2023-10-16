@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mydeployment
+  name: pumejdeployment
   namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Values.appName }}
@@ -18,7 +18,7 @@ spec:
         tier: frontend
     spec: # Pod spec
       containers:
-      - name: mycontainer
+      - name: mexycontainer
         #https://hub.docker.com/_/nginx
         image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
         ports:
@@ -31,11 +31,11 @@ spec:
             memory: "128Mi"
             cpu: "100m"
         volumeMounts:
-        - name: nginx-config
+        - name: mexy-config
           mountPath: /usr/share/nginx/html
           readOnly: true
       volumes:
-      - name: nginx-config
+      - name: mexy-config
         configMap:
           name: {{ .Values.configmap.name }}
           items:
